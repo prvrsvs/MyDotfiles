@@ -1,0 +1,12 @@
+# Emacs generated files
+auto-save-list/
+autosaves/
+backups/
+eln-cache/
+
+# Installed packages
+elpa/
+
+# Temporary files
+*~
+.#*
