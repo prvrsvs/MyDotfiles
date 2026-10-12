@@ -1,3 +1,19 @@
+;; init.el --- Emacs initialization file
+
+
+(defun my-copy-to-clipboard ()
+  "Copy current kill to the Wayland clipboard."
+  (when (and (executable-find "wl-copy")
+             (car kill-ring))
+    (with-temp-buffer
+      (insert (car kill-ring))
+      (call-process-region (point-min) (point-max)
+                           "wl-copy" nil 0))))
+
+(advice-add 'kill-new :after
+            (lambda (&rest _)
+              (my-copy-to-clipboard)))
+
 ;;-------------------- Directorio para backups --------------------
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backups/" user-emacs-directory))))
@@ -14,6 +30,11 @@
 (make-directory
  (expand-file-name "autosaves/" user-emacs-directory)
  t)
+
+(setq auto-save-default t)
+(setq auto-save-timeout 20)       ; Guarda automáticamente tras 20 segundos de inactividad
+(setq auto-save-interval 200) ; Guarda cada 200 pulsaciones de tecla
+
 
 ;; Italic color gris en comentarios
 (custom-set-faces
@@ -32,20 +53,17 @@
       '(("gnu"   . "https://elpa.gnu.org/packages/")
         ("melpa" . "https://melpa.org/packages/")))
 
-(unless package-archive-contents
-  (package-refresh-contents))
-
 (require 'use-package)
 
 ;; Dashboard
-(use-package dashboard
-  :ensure t)
+;; (use-package dashboard
+;;   :ensure t)
 
 (load (expand-file-name "config/ui/dashboard.el"
                        user-emacs-directory))
 
-(setq inhibit-startup-screen t)
-(setq initial-buffer-choice #'my-dashboard)
+;; (setq inhibit-startup-screen t)
+;; (setq initial-buffer-choice #'my-dashboard)
 
 
 ;;-------------------- batpuccin --------------------
@@ -96,6 +114,8 @@
 
 (add-to-list 'eglot-server-programs
              '(csharp-mode . ("roslyn-language-server" "--stdio")))
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-ignored-server-capabilities :documentOnTypeFormattingProvider))
 
 (setq eglot-send-changes-idle-time 1.0)
 (setq flymake-no-changes-timeout 1.0)
@@ -121,4 +141,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(batppuccin cape corfu-terminal dashboard nerd-icons orderless
-		projectile)))
+		projectile vterm)))
