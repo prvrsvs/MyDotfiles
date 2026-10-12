@@ -1,0 +1,5 @@
+[opener]
+edit = [
+    { run = 'emacs -nw -- %s', block = true, desc = "Emacs", for = "unix" },
+]
+
