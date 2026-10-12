@@ -75,28 +75,20 @@ PROMPT='%F{red}
 %F{red}└── %f'
 
 # ==========================================
-# EZA
+# ALIAS
 # ==========================================
 
 alias ls='eza --icons --group-directories-first'
 alias ll='eza -lah --icons --group-directories-first'
 alias la='eza -a --icons --group-directories-first'
+alias emac='emacs'
 
 # ==========================================
 # AUTOCOMPLETION
 # ==========================================
 
-autoload -Uz compinit
-compinit
+# Autosuggestions
+source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Ignorar mayúsculas/minúsculas
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# Menú de selección
-zstyle ':completion:*' menu select
-
-# Colores en las opciones
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
-# Completar directorios primero
-zstyle ':completion:*' file-sort modification
+# Syntax highlighting — debe ir al final
+source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
