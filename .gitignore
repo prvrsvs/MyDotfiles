@@ -1,0 +1,43 @@
+
+# =========================
+# Emacs: archivos generados
+# =========================
+
+/config/.emacs.d/auto-save-list/
+/config/.emacs.d/autosaves/
+/config/.emacs.d/backups/
+/config/.emacs.d/eln-cache/
+/config/.emacs.d/elpa/
+/config/.emacs.d/transient/
+/config/.emacs.d/recentf
+
+# Archivos temporales de Emacs
+/config/.emacs.d/*~
+/config/.emacs.d/#*#
+/config/.emacs.d/.#*
+
+# =========================
+# Zsh: historial y caché
+# =========================
+
+/config/zsh/.zsh_history
+/config/zsh/.zcompdump*
+/config/zsh/.zsh_sessions/
+
+# =========================
+# Sistema operativo
+# =========================
+
+.DS_Store
+Thumbs.db
+*~
+
+# =========================
+# Archivos temporales
+# =========================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
