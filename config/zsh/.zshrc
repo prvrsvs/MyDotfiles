@@ -82,6 +82,7 @@ alias ls='eza --icons --group-directories-first'
 alias ll='eza -lah --icons --group-directories-first'
 alias la='eza -a --icons --group-directories-first'
 alias emac='emacs'
+alias cd ..='..'
 
 # ==========================================
 # AUTOCOMPLETION
