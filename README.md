@@ -7,6 +7,7 @@
     </p>
     <img src="./images/zshtheme.png" alt="My prompt" width="800"/>
     <img src="./images/emacs.png" alt="Emacs dashboard" width="800"/>
+    <img src="./images/yazi.png" alt="Yazi" width="800"/>
 </div>
 
 ## 🚀 Quick Start
@@ -20,11 +21,12 @@ git clone https://github.com/prvrsvs/MyDotfiles.git
 All custom settings will be loaded automatically.
 
 ## 🛠️ Requirements
-Kitty
-Emacs 30+
-Git
-zsh
-Dank Mono fonts
+* Kitty
+* Emacs 30+
+* Git
+* zsh
+* yazi
+* Dank Mono fonts
 
 ## 💡 Notes
 
@@ -42,12 +44,25 @@ Contributions and improvements are welcome via pull requests.
 * **Corfu** → *Auto-completion*
 * **eglot** → *lsp-server managament*
 * **magit** → *Git service*
+* *treemacs* → *file directory*
 
 ### Terminal tools
 
 * **zsh** → *Personal shortcuts*
 * **Package Management** → *Installed packages handling*
 * **General Settings** → *Emacs general configurations*
+
+### Yazi
+
+* **ffmpeg** → *audio and video*
+* **7zip** → *zip tools*
+* **jq** → *json tools*
+* **poppler-utils** → *pdf tools*
+* **fd-find** **
+* **ripgrep** **
+* **fzf** **
+* **zoxide** **
+* **exif-tools** *metadata*
 
 
 ### UI / Look & Feel
