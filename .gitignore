@@ -10,6 +10,7 @@
 /config/.emacs.d/elpa/
 /config/.emacs.d/transient/
 /config/.emacs.d/recentf
+/config/.emacs.d/.cache/
 
 # Archivos temporales de Emacs
 /config/.emacs.d/*~
